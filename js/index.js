@@ -39,4 +39,149 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+const ctaImg = document.getElementById("cta-img");
+
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+
+// const navUpdates = document.querySelectorAll('.container nav a');
+
+// navUpdates[0].textContent = siteContent["nav"]["nav-item-1"];
+
+// navUpdates[1].textContent = siteContent["nav"]["nav-item-2"];
+
+// navUpdates[2].textContent = siteContent["nav"]["nav-item-3"];
+
+// navUpdates[3].textContent = siteContent["nav"]["nav-item-4"];
+
+// navUpdates[4].textContent = siteContent["nav"]["nav-item-5"];
+
+// navUpdates[5].textContent = siteContent["nav"]["nav-item-6"];
+
+// Update Nav bar
+
+const newNav = document.querySelectorAll('header nav a');
+
+console.log(newNav);
+
+newNav.forEach(function(element, i) {
+  element.textContent = siteContent.nav[`nav-item-${i + 1}`]
+});
+
+
+
+// const ctaBreak = document.createElement('<br>');
+
+const ctaText = document.querySelector('h1');
+
+ctaText.textContent = "DOM\r\n"; 
+ctaText.textContent += "Is\r\n";
+ctaText.textContent += "Awesome";
+
+const AddButtonText = document.querySelector('button');
+
+AddButtonText.textContent = siteContent["cta"]["button"];
+
+const header4Updates = document.querySelectorAll('h4');
+
+// Main Content
+
+
+const mainContent = document.querySelectorAll('.main-content .top-content .text-content');
+const sections = ['features', 'about', 'services', 'product', 'vision'];
+mainContent.forEach((element, i) => {
+  const section = sections[i];
+  element.querySelector('h4').textContent = siteContent["main-content"][`${section}-h4`];
+  element.querySelector('p').textContent = siteContent["main-content"][`${section}-content`];
+})
+
+
+// console.log(header4Updates);
+
+// header4Updates[0].textContent = siteContent["main-content"]["features-h4"];
+
+// header4Updates[1].textContent = siteContent["main-content"]["about-h4"];
+
+// header4Updates[2].textContent = siteContent["main-content"]["services-h4"];
+
+// header4Updates[3].textContent = siteContent["main-content"]["product-h4"];
+
+// header4Updates[4].textContent = siteContent["main-content"]["vision-h4"];
+
+// const mainContentParagraphUpdates = document.querySelectorAll('.main-content p');
+
+// console.log(mainContentParagraphUpdates);
+
+// mainContentParagraphUpdates[0].textContent = siteContent["main-content"]["features-content"];
+
+// mainContentParagraphUpdates[1].textContent = siteContent["main-content"]["about-content"];
+
+// mainContentParagraphUpdates[2].textContent = siteContent["main-content"]["services-content"];
+
+// mainContentParagraphUpdates[3].textContent = siteContent["main-content"]["product-content"];
+
+// mainContentParagraphUpdates[4].textContent = siteContent["main-content"]["vision-content"];
+
+const middleImage = document.getElementById("middle-img");
+
+middleImage.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+const contactUpdatesHeader = document.querySelector('.contact h4');
+
+console.log(contactUpdatesHeader);
+
+contactUpdatesHeader.textContent = siteContent["contact"]["contact-h4"];
+
+const contactInfoUpdates = document.querySelectorAll('.contact p');
+
+console.log(contactInfoUpdates);
+
+contactInfoUpdates[0].textContent = siteContent["contact"]["address"];
+
+contactInfoUpdates[1].textContent = siteContent["contact"]["phone"];
+
+contactInfoUpdates[2].textContent = siteContent["contact"]["email"];
+
+const footerUpdate = document.querySelector("footer p");
+
+console.log(footerUpdate);
+
+footerUpdate.textContent = siteContent["footer"]["copyright"];
+
+// Change navigation text to green
+
+console.log(newNav);
+
+newNav.forEach(element => element.style.color = "green");
+
+// navUpdates[0].style.color = "green";
+
+// navUpdates[1].style.color = "green";
+
+// navUpdates[2].style.color = "green";
+
+// navUpdates[3].style.color = "green";
+
+// navUpdates[4].style.color = "green";
+
+// navUpdates[5].style.color = "green";
+
+const locateNavParent = document.querySelector('nav');
+
+console.log(locateNavParent);
+
+const newNavElement = document.createElement('a');
+
+const prependNewNavElement = document.createElement('a');
+
+console.log(newNavElement);
+
+locateNavParent.appendChild(newNavElement);
+
+locateNavParent.prepend(prependNewNavElement);
+
+newNavElement.textContent = "New Nav";
+
+prependNewNavElement.textContent = "Prepend Nav";
