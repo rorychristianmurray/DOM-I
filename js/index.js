@@ -46,19 +46,31 @@ const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 
-const navUpdates = document.querySelectorAll('.container nav a');
+// const navUpdates = document.querySelectorAll('.container nav a');
 
-navUpdates[0].textContent = siteContent["nav"]["nav-item-1"];
+// navUpdates[0].textContent = siteContent["nav"]["nav-item-1"];
 
-navUpdates[1].textContent = siteContent["nav"]["nav-item-2"];
+// navUpdates[1].textContent = siteContent["nav"]["nav-item-2"];
 
-navUpdates[2].textContent = siteContent["nav"]["nav-item-3"];
+// navUpdates[2].textContent = siteContent["nav"]["nav-item-3"];
 
-navUpdates[3].textContent = siteContent["nav"]["nav-item-4"];
+// navUpdates[3].textContent = siteContent["nav"]["nav-item-4"];
 
-navUpdates[4].textContent = siteContent["nav"]["nav-item-5"];
+// navUpdates[4].textContent = siteContent["nav"]["nav-item-5"];
 
-navUpdates[5].textContent = siteContent["nav"]["nav-item-6"];
+// navUpdates[5].textContent = siteContent["nav"]["nav-item-6"];
+
+// Update Nav bar
+
+const newNav = document.querySelectorAll('header nav a');
+
+console.log(newNav);
+
+newNav.forEach(function(element, i) {
+  element.textContent = siteContent.nav[`nav-item-${i + 1}`]
+});
+
+
 
 // const ctaBreak = document.createElement('<br>');
 
@@ -74,31 +86,43 @@ AddButtonText.textContent = siteContent["cta"]["button"];
 
 const header4Updates = document.querySelectorAll('h4');
 
-console.log(header4Updates);
+// Main Content
 
-header4Updates[0].textContent = siteContent["main-content"]["features-h4"];
 
-header4Updates[1].textContent = siteContent["main-content"]["about-h4"];
+const mainContent = document.querySelectorAll('.main-content .top-content .text-content');
+const sections = ['features', 'about', 'services', 'product', 'vision'];
+mainContent.forEach((element, i) => {
+  const section = sections[i];
+  element.querySelector('h4').textContent = siteContent["main-content"][`${section}-h4`];
+  element.querySelector('p').textContent = siteContent["main-content"][`${section}-content`];
+})
 
-header4Updates[2].textContent = siteContent["main-content"]["services-h4"];
 
-header4Updates[3].textContent = siteContent["main-content"]["product-h4"];
+// console.log(header4Updates);
 
-header4Updates[4].textContent = siteContent["main-content"]["vision-h4"];
+// header4Updates[0].textContent = siteContent["main-content"]["features-h4"];
 
-const mainContentParagraphUpdates = document.querySelectorAll('.main-content p');
+// header4Updates[1].textContent = siteContent["main-content"]["about-h4"];
 
-console.log(mainContentParagraphUpdates);
+// header4Updates[2].textContent = siteContent["main-content"]["services-h4"];
 
-mainContentParagraphUpdates[0].textContent = siteContent["main-content"]["features-content"];
+// header4Updates[3].textContent = siteContent["main-content"]["product-h4"];
 
-mainContentParagraphUpdates[1].textContent = siteContent["main-content"]["about-content"];
+// header4Updates[4].textContent = siteContent["main-content"]["vision-h4"];
 
-mainContentParagraphUpdates[2].textContent = siteContent["main-content"]["services-content"];
+// const mainContentParagraphUpdates = document.querySelectorAll('.main-content p');
 
-mainContentParagraphUpdates[3].textContent = siteContent["main-content"]["product-content"];
+// console.log(mainContentParagraphUpdates);
 
-mainContentParagraphUpdates[4].textContent = siteContent["main-content"]["vision-content"];
+// mainContentParagraphUpdates[0].textContent = siteContent["main-content"]["features-content"];
+
+// mainContentParagraphUpdates[1].textContent = siteContent["main-content"]["about-content"];
+
+// mainContentParagraphUpdates[2].textContent = siteContent["main-content"]["services-content"];
+
+// mainContentParagraphUpdates[3].textContent = siteContent["main-content"]["product-content"];
+
+// mainContentParagraphUpdates[4].textContent = siteContent["main-content"]["vision-content"];
 
 const middleImage = document.getElementById("middle-img");
 
@@ -128,17 +152,21 @@ footerUpdate.textContent = siteContent["footer"]["copyright"];
 
 // Change navigation text to green
 
-navUpdates[0].style.color = "green";
+console.log(newNav);
 
-navUpdates[1].style.color = "green";
+newNav.forEach(element => element.style.color = "green");
 
-navUpdates[2].style.color = "green";
+// navUpdates[0].style.color = "green";
 
-navUpdates[3].style.color = "green";
+// navUpdates[1].style.color = "green";
 
-navUpdates[4].style.color = "green";
+// navUpdates[2].style.color = "green";
 
-navUpdates[5].style.color = "green";
+// navUpdates[3].style.color = "green";
+
+// navUpdates[4].style.color = "green";
+
+// navUpdates[5].style.color = "green";
 
 const locateNavParent = document.querySelector('nav');
 
